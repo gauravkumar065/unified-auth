@@ -1,7 +1,7 @@
 import { AuthConfig, IAuthWrapper } from './types'
 import { SupabaseAuthWrapper } from './SupabaseAuthWrapper'
 import { AppwriteAuthWrapper } from './AppwriteAuthWrapper'
-import { NextAuthWrapper } from './NextAuthWrapper'
+// import { NextAuthWrapper } from './NextAuthWrapper' 
 import { FirebaseAuthWrapper } from './FirebaseAuthWrapper'
 
 export class AuthFactory {
@@ -17,11 +17,11 @@ export class AuthFactory {
                     throw new Error('Appwrite endpoint and project ID are required for Appwrite provider')
                 }
                 return new AppwriteAuthWrapper(config.appwriteEndpoint, config.appwriteProjectId)
-            case 'nextauth':
-                if (!config.nextAuthOptions) {
-                    throw new Error('NextAuth options are required for NextAuth provider')
-                }
-                return new NextAuthWrapper(config.nextAuthOptions)
+            // case 'nextauth':
+            //     if (!config.nextAuthOptions) {
+            //         throw new Error('NextAuth options are required for NextAuth provider')
+            //     }
+            //     return new NextAuthWrapper(config.nextAuthOptions)
             case 'firebase':
                 if (!config.firebaseConfig) {
                     throw new Error('Firebase configuration is required for Firebase provider')

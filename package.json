@@ -1,5 +1,5 @@
 {
-  "name": "unified-auth",
+  "name": "unified-auth-js",
   "version": "1.0.0",
   "description": "A simple way to auth service",
   "main": "lib/index.js",
